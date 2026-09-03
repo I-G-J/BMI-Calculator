@@ -1,0 +1,203 @@
+:root {
+    --background-color: #dff9ff;
+    --card-background: rgba(255, 255, 255, 0.9);
+    --primary-button-color: #10d8d8;
+    --hover-button-color: #0bbaba;
+    --text-color: #12324a;
+    --muted-text: #5f7280;
+    --shadow-color: rgba(16, 216, 216, 0.2);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #dff9ff 0%, #c4f0ff 45%, #eafcff 100%);
+    color: var(--text-color);
+}
+
+.container {
+    text-align: center;
+    height: 100px;
+    background-color: var(--background-color);
+}
+
+.container h1 {
+    line-height: 100px;
+    margin: 0;
+}
+
+.maincontainer {
+    min-height: calc(100vh - 100px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 32px 20px;
+}
+
+.bmicontainer {
+    width: min(100%, 520px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bmi-card {
+    width: 100%;
+    background: var(--card-background);
+    border: 1px solid rgba(18, 50, 74, 0.08);
+    border-radius: 22px;
+    padding: 32px 28px;
+    box-shadow: 0 20px 50px var(--shadow-color);
+    backdrop-filter: blur(8px);
+}
+
+.eyebrow {
+    margin: 0 0 8px;
+    font-size: 0.76rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted-text);
+    font-weight: 700;
+}
+
+.bmi-card h2 {
+    margin: 0 0 24px;
+    font-size: clamp(2rem, 3vw, 2.5rem);
+    text-align: center;
+    color: var(--text-color);
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    font-size: 0.98rem;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.input-group input {
+    width: 100%;
+    border: 1px solid rgba(18, 50, 74, 0.12);
+    border-radius: 12px;
+    padding: 14px 16px;
+    font-size: 1rem;
+    background: #f9feff;
+    color: var(--text-color);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: var(--primary-button-color);
+    box-shadow: 0 0 0 4px rgba(16, 216, 216, 0.18);
+    transform: translateY(-1px);
+}
+
+.button-row {
+    display: flex;
+    gap: 12px;
+    margin-top: 18px;
+}
+
+button {
+    border: none;
+    border-radius: 12px;
+    padding: 14px 18px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.primary-btn {
+    flex: 1;
+    background: linear-gradient(135deg, var(--primary-button-color), var(--hover-button-color));
+    color: #fff;
+    box-shadow: 0 12px 20px rgba(16, 216, 216, 0.3);
+}
+
+.secondary-btn {
+    background: #edf7fa;
+    color: var(--text-color);
+}
+
+button:hover {
+    transform: translateY(-2px);
+}
+
+.primary-btn:hover {
+    box-shadow: 0 16px 24px rgba(16, 216, 216, 0.38);
+}
+
+.secondary-btn:hover {
+    background: #e1f3f8;
+}
+
+.message {
+    margin-top: 18px;
+    padding: 12px 14px;
+    border-radius: 10px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.message.success {
+    background: #e8fff6;
+    color: #0c7b5c;
+}
+
+.message.error {
+    background: #fff1f1;
+    color: #c73b3b;
+}
+
+.result-box {
+    margin-top: 20px;
+    background: linear-gradient(135deg, #ecfeff, #f5fbff);
+    border: 1px solid rgba(16, 216, 216, 0.2);
+    border-radius: 16px;
+    padding: 18px 16px;
+    text-align: center;
+}
+
+.result-label {
+    font-size: 0.8rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted-text);
+    margin-bottom: 6px;
+}
+
+.result-value {
+    font-size: clamp(2.2rem, 4vw, 3rem);
+    font-weight: 800;
+    color: var(--text-color);
+    line-height: 1;
+}
+
+.result-category {
+    margin-top: 8px;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--hover-button-color);
+}
+
+@media (max-width: 540px) {
+    .bmi-card {
+        padding: 24px 18px;
+    }
+
+    .button-row {
+        flex-direction: column;
+    }
+}
